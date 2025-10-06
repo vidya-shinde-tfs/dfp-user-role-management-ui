@@ -1,27 +1,36 @@
-# DfpUserRoleManagementUi
+# dfp-user-role-management-ui
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.21.
+Framework: Angular
+Generated with Thermo UI Foundation standards.
 
-## Development server
+## Project Structure
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This project follows the Thermo standard folder structure:
 
-## Code scaffolding
+- `src/app/core/` - Core services, guards, and interceptors
+- `src/app/shared/` - Shared components, directives, and pipes
+- `src/app/features/` - Feature modules and components
+- `src/assets/` - Static assets (images, icons, styles)
+- `src/environments/` - Environment-specific configurations
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Development
 
-## Build
+### HTTPS Development
+This project is configured for HTTPS development using self-signed certificates.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Available Scripts
 
-## Running unit tests
+- `npm run start` - Start development server with HTTPS
+- `npm run serve:https` - Start development server with HTTPS
+- `npm run serve:http` - Start development server with HTTP
+- `npm run build` - Build for production
+- `npm run verify:build` - Verify build works
+- `npm run verify:serve` - Verify serving works
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Registry Configuration
 
-## Running end-to-end tests
+This project uses the Thermo npm registry. Ensure you have the `ENV_NPMRC_PSW` environment variable set.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## References
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- [Thermo HTTPS Local Development](https://confluence.amer.thermo.com/spaces/DHAP/pages/394396996/Using+Angular+CLI+to+serve+over+https+locally)

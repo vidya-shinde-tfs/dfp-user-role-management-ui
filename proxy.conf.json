@@ -1,0 +1,66 @@
+{
+
+  "/apps": {
+    "target": "https://test.apps.thermofisher.com",
+    "secure": true,
+    "changeOrigin": true
+  },
+  "/dhap-amp": {
+    "target": "https://test.apps.thermofisher.com",
+    "secure": true,
+    "changeOrigin": true
+  },
+  "/dhap/dm": {
+    "target": "https://test.apps.thermofisher.com",
+    "secure": true,
+    "changeOrigin": true
+  },
+  "/nmsvc": {
+    "target": "https://test.apps.thermofisher.com",
+    "secure": true,
+    "changeOrigin": true
+  },
+  "/dhap-search": {
+    "target": "https://test.apps.thermofisher.com",
+    "secure": true,
+    "changeOrigin": true
+  },
+  "/dhap-authorizr": {
+    "target": "https://test.apps.thermofisher.com",
+    "secure": true,
+    "changeOrigin": true
+  },
+  "/nm/nmsvc": {
+    "target": "https://test.apps.thermofisher.com",
+    "secure": true,
+    "changeOrigin": true
+  },
+  "/dhap-components": {
+    "target": "https://test.apps.thermofisher.com",
+    "secure": true,
+    "changeOrigin": true,
+    "headers": {
+      "host": "test.apps.thermofisher.com"
+    }
+  },
+  "/editor-web": {
+    "target": "https://test.apps.thermofisher.com",
+    "secure": true,
+    "changeOrigin": true
+  },
+  "/pl/svc/": {
+    "target": "https://test.apps.thermofisher.com",
+    "secure": true,
+    "changeOrigin": true
+  },
+  "/dhap": {
+    "target": "https://test.apps.thermofisher.com",
+    "secure": true,
+    "changeOrigin": true
+  },
+  "/api": {
+    "target": "https://test.apps.thermofisher.com",
+    "secure": true,
+    "changeOrigin": true
+  }
+}

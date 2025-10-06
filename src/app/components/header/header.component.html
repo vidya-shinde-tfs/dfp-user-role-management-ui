@@ -1,0 +1,33 @@
+<header class="thermo-header">
+  <div class="header-top">
+    <div class="header-container">
+      <div class="header-left">
+        <div class="thermo-logo">
+          <span class="logo-text">ThermoFisher</span>
+          <span class="logo-subtitle">SCIENTIFIC</span>
+        </div>
+        <div class="platform-info">
+          <span class="platform-name">Connect Platform</span>
+          <span class="platform-section">Access control</span>
+        </div>
+      </div>
+      
+      <div class="header-right">
+        <div class="user-section">
+          <div class="notification-icon">
+            <span class="notification-badge">99+</span>
+            <span class="bell-icon">🔔</span>
+          </div>
+          <div class="user-profile" (click)="onProfileClick()">
+            <div class="user-avatar">
+              <span>{{ userInfo.initials }}</span>
+            </div>
+          </div>
+          <div class="help-icon" (click)="onHelpClick()">
+            <span>❓</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

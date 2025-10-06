@@ -1,0 +1,46 @@
+build:
+  image: techops-docker-prod.ha-us.dso.thermofisher.net/node:18.19.0
+  steps:
+    - echo "Running CI Build"
+    - node --version
+    - npm --version
+    - rm -rf node_modules/
+    - rm -rf package-lock.json
+    - npm cache clean --force
+    - npm install --legacy-peer-deps
+    # - ./node_modules/.bin/gulp clean:dist
+    # - ./node_modules/.bin/gulp clean:package
+    - npm run ci-build
+    - ls -la dist/licensing-portal-ui
+
+
+deployment:
+  type: S3
+  name: licensing-portal
+  buildFolder: dist/licensing-portal-ui
+  destinationFolder: apps/licensing-portal
+  nodejsVersion: node-v18.19.0
+  publicBucket: true
+
+  labels:
+    component: frontend
+    stack: angular
+    sub_application: licensing-portal-ui
+    part_of: platform-operations
+    stack_version: 18.19.0
+    application_owner: svc-capybaras@thermofisher.com
+    costcenter: 12345678
+    division: dpe
+    group: corporate
+    website: apps.thermofisher.com
+
+environments:
+  dev:
+    branch: master
+    bucketName: dev2.apps.thermofisher.com
+    promotion:
+      to: test
+      mergeTo: master
+
+  test:
+    bucketName: test.apps.thermofisher.com

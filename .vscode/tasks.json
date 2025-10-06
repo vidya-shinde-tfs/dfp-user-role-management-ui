@@ -1,42 +1,107 @@
 {
-  // For more information, visit: https://go.microsoft.com/fwlink/?LinkId=733558
   "version": "2.0.0",
   "tasks": [
     {
-      "type": "npm",
-      "script": "start",
-      "isBackground": true,
-      "problemMatcher": {
-        "owner": "typescript",
-        "pattern": "$tsc",
-        "background": {
-          "activeOnStart": true,
-          "beginsPattern": {
-            "regexp": "(.*?)"
-          },
-          "endsPattern": {
-            "regexp": "bundle generation complete"
-          }
-        }
-      }
+      "label": "Angular Setup Step 1: Navigate to project directory",
+      "type": "shell",
+      "command": "cd D:\\Thermo_Fisher\\dfp-user-portal\\dfp-user-role-management-ui",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": []
     },
     {
-      "type": "npm",
-      "script": "test",
-      "isBackground": true,
-      "problemMatcher": {
-        "owner": "typescript",
-        "pattern": "$tsc",
-        "background": {
-          "activeOnStart": true,
-          "beginsPattern": {
-            "regexp": "(.*?)"
-          },
-          "endsPattern": {
-            "regexp": "bundle generation complete"
+      "label": "Angular Setup Step 2: Install project dependencies",
+      "type": "shell",
+      "command": "npm install",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Angular Setup Step 3: Verify project builds successfully",
+      "type": "shell",
+      "command": "npm run build",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Angular Setup Step 4: Clear port 4200 for development server",
+      "type": "shell",
+      "command": "for /f \"tokens=5\" %a in ('netstat -ano ^| findstr :4200') do taskkill /f /pid %a 2>nul || echo Port 4200 is free",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Angular Setup Step 5: Start HTTPS development server",
+      "type": "shell",
+      "command": "npm run serve:https -- --port 4200 --host localhost --disable-host-check",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": [
+        {
+          "pattern": [
+            {
+              "regexp": ".*",
+              "file": 1,
+              "location": 2,
+              "message": 3
+            }
+          ],
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": "^.*Compiling.*",
+            "endsPattern": "^.*Compiled successfully.*"
           }
         }
-      }
+      ],
+      "isBackground": true
+    },
+    {
+      "label": "Angular Project Full Setup",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "Angular Setup Step 1: Navigate to project directory",
+        "Angular Setup Step 2: Install project dependencies",
+        "Angular Setup Step 3: Verify project builds successfully",
+        "Angular Setup Step 4: Clear port 4200 for development server"
+      ]
     }
   ]
 }

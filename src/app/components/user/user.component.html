@@ -1,0 +1,34 @@
+<div class="user-management">
+  <!-- Tab Navigation -->
+  <div class="page-tabs">
+    <nav class="main-navigation">
+      <ul class="nav-tabs">
+        <li class="nav-item">
+          <a href="#" class="nav-link" [class.active]="activeTab === 'users'" (click)="setActiveTab('users')">
+            Users
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link" [class.active]="activeTab === 'user-groups'" (click)="setActiveTab('user-groups')">
+            User groups
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link" [class.active]="activeTab === 'roles'" (click)="setActiveTab('roles')">
+            Roles
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link" [class.active]="activeTab === 'features'" (click)="setActiveTab('features')">
+            Features
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link" [class.active]="activeTab === 'resources'" (click)="setActiveTab('resources')">
+            Resources
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

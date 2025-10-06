@@ -1,0 +1,69 @@
+<aside class="sidebar" [class.collapsed]="isCollapsed">
+  <!-- Navigation Items -->
+  <nav class="sidebar-nav">
+    <ul class="nav-list">
+      <li *ngFor="let item of navigationItems" class="nav-item">
+          <!-- Regular menu item (without submenu) -->           
+           <a *ngIf="!item.isSubMenu" 
+           href="#"
+           class="nav-link" 
+           [class.active]="isActiveRoute(item.path)"           
+           (click)="navigateToRoute(item.path); $event.preventDefault()">
+          <div class="nav-icon">
+            <img *ngIf="item.icon" [src]="item.icon" [alt]="item.name" class="icon-svg">
+            <i *ngIf="!item.icon && item.name === 'Home'" class="icon-home"></i>
+          </div>
+          <span class="nav-text" *ngIf="!isCollapsed">{{ item.name }}</span>
+        </a>
+
+        <!-- Submenu item -->
+        <div *ngIf="item.isSubMenu" class="submenu-container">          
+          <a href="#" class="nav-link submenu-header" 
+             [class.active]="isSubMenuActive(item.subItems || [])"
+             [class.expanded]="expandedMenus[item.name] "             
+             (click)="toggleSubMenu(item.name); $event.preventDefault()">
+            <div class="nav-icon">
+              <img *ngIf="item.icon" [src]="item.icon" [alt]="item.name" class="icon-svg">
+              <i *ngIf="!item.icon && item.name === 'SOFTWARE SERVICES'" class="icon-software-services"></i>
+              <i *ngIf="!item.icon && item.name === 'ADMINISTRATION'" class="icon-administration"></i>
+            </div>            
+            <span class="nav-text" *ngIf="!isCollapsed">{{ item.name }}</span>
+            <div class="expand-icon" *ngIf="!isCollapsed">
+              <i [class]="expandedMenus[item.name] ? 'icon-open' : 'icon-close'" 
+                 [attr.aria-label]="expandedMenus[item.name] ? 'Collapse' : 'Expand'"></i>
+            </div>
+          </a>          <!-- Submenu items -->
+          <ul class="submenu" 
+              *ngIf="item.subItems && expandedMenus[item.name]">
+            <li *ngFor="let subItem of item.subItems" class="submenu-item">              
+              <a href="#" class="nav-link submenu-link" 
+                 [class.active]="isActiveRoute(subItem.path)"                 
+                 (click)="navigateToRoute(subItem.path); $event.preventDefault()">
+                <div class="nav-icon">
+                  <img *ngIf="subItem.icon" [src]="subItem.icon" [alt]="subItem.name" class="icon-svg">
+                  <i *ngIf="!subItem.icon && subItem.name === 'Products'" class="icon-products"></i>
+                  <i *ngIf="!subItem.icon && subItem.name === 'Product Releases'" class="icon-product-release"></i>
+                  <i *ngIf="!subItem.icon && subItem.name === 'Preferences'" class="icon-preferences"></i>
+                  <i *ngIf="!subItem.icon && subItem.name === 'Customer Support'" class="icon-customer-support"></i>
+                </div>
+                <span class="nav-text">{{ subItem.name }}</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </nav>  
+    <!-- Collapse button at bottom -->  
+     <div class="sidebar-footer">
+    <a href="#" class="nav-link collapse-btn" (click)="toggleCollapse(); $event.preventDefault()">
+      <div class="nav-icon">
+          <img 
+                [src]="isCollapsed ? 'assets/icons/expand.svg' : 'assets/icons/collapse.svg'" 
+                [alt]="isCollapsed ? 'Expand' : 'Collapse'"
+                class="icon-svg expand-arrow">
+      </div>
+      <span class="nav-text" *ngIf="!isCollapsed">Collapse</span>
+    </a>
+  </div>
+</aside>

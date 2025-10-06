@@ -1,0 +1,205 @@
+.thermo-header {
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  .header-top {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+    
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 50px;
+      padding: 0 24px;
+      max-width: 1400px;
+      margin: 0 auto;
+
+      .header-left {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+
+        .thermo-logo {
+          display: flex;
+          flex-direction: column;
+          
+          .logo-text {
+            font-size: 16px;
+            font-weight: 700;
+            color: #0066cc;
+            line-height: 1;
+          }
+          
+          .logo-subtitle {
+            font-size: 10px;
+            font-weight: 600;
+            color: #0066cc;
+            letter-spacing: 1px;
+            line-height: 1;
+          }
+        }
+
+        .platform-info {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          
+          .platform-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: #495057;
+          }
+          
+          .platform-section {
+            font-size: 14px;
+            color: #6c757d;
+          }
+        }
+      }
+
+      .header-right {
+        .user-section {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+
+          .notification-icon {
+            position: relative;
+            cursor: pointer;
+            
+            .notification-badge {
+              position: absolute;
+              top: -8px;
+              right: -8px;
+              background-color: #dc3545;
+              color: white;
+              font-size: 10px;
+              font-weight: 600;
+              padding: 2px 5px;
+              border-radius: 10px;
+              min-width: 18px;
+              text-align: center;
+            }
+            
+            .bell-icon {
+              font-size: 18px;
+              color: #6c757d;
+            }
+          }
+
+          .user-profile {
+            cursor: pointer;
+            
+            .user-avatar {
+              width: 32px;
+              height: 32px;
+              border-radius: 50%;
+              background-color: #0066cc;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: white;
+              font-weight: 600;
+              font-size: 14px;
+            }
+          }
+
+          .help-icon {
+            cursor: pointer;
+            font-size: 18px;
+            color: #6c757d;
+          }
+        }
+      }
+    }
+  }
+
+  .header-bottom {
+    background-color: #ffffff;
+    
+    .header-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 24px;
+
+      .main-navigation {
+        .nav-tabs {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          border-bottom: 1px solid #dee2e6;
+
+          .nav-item {
+            .nav-link {
+              display: block;
+              padding: 16px 24px;
+              text-decoration: none;
+              color: #6c757d;
+              font-weight: 500;
+              font-size: 14px;
+              border-bottom: 3px solid transparent;
+              transition: all 0.2s ease;
+
+              &:hover {
+                color: #495057;
+                background-color: #f8f9fa;
+              }
+
+              &.active {
+                color: #dc3545;
+                border-bottom-color: #dc3545;
+                background-color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .thermo-header {
+    .header-top {
+      .header-container {
+        padding: 0 16px;
+        
+        .header-left {
+          gap: 16px;
+          
+          .platform-info {
+            .platform-name,
+            .platform-section {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+    
+    .header-bottom {
+      .header-container {
+        padding: 0 16px;
+        
+        .main-navigation {
+          .nav-tabs {
+            .nav-item {
+              .nav-link {
+                padding: 12px 16px;
+                font-size: 13px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
