@@ -23,35 +23,42 @@ interface NavigationItem {
   styleUrls: ["./sidebar-nav.component.scss"],
 })
 export class SidebarNavComponent {
-    @Input() isCollapsed = false;
+   @Input() isCollapsed = false;
   @Output() collapseToggle = new EventEmitter<boolean>();
   expandedMenus: Record<string, boolean> = {};
   
   navigationItems: NavigationItem[] = [
+   
     {
-      name: "SOFTWARE SERVICES",
-      path: "",
-      icon: "assets/icons/cloud.svg", 
-      isSubMenu: true,
-      subItems: [
-        {
-          name: "Products",
-          path: "/product-lines",
-          icon: "assets/icons/documentation.svg",
-        },
-        {
-          name: "Product Releases",
-          path: "/product-release",
-          icon: "assets/icons/badge.svg",
-        },
-      ],
+      name: "Product Lines",
+      path: "/product-lines",
+      icon: "", // Using fontello icon-product-lines
+    },
+    {
+      name: "Catalogs",
+      path: "/catalogs",
+      icon: "", // Using fontello icon-catalog
+    },
+    {
+      name: "Products",
+      path: "/products",
+      icon: "assets/icons/products.svg",
+    },
+    {
+      name: "Files",
+      path: "/files",
+      icon: "", // Using fontello icon-files
+    },
+    {
+      name: "Members",
+      path: "/members",
+      icon: "", // Using fontello icon-members
     }
   ];
 
   constructor(private router: Router) {
     // Initialize expanded menus
-    this.expandedMenus["SOFTWARE SERVICES"] = true;
-    this.expandedMenus["ADMINISTRATION"] = true;
+    this.expandedMenus["SUPPORT"] = true;
   }
 
   toggleCollapse() {
@@ -68,15 +75,26 @@ export class SidebarNavComponent {
   private readonly routeMap: Record<string, string[]> = {
     '/product-lines': [
       '/product-lines',
+      '/create-product-line',
+      '/edit-product-line',
+      '/view-product-line'
+    ],
+    '/catalogs': [
+      '/catalogs',
+      '/view-catalog',
+      '/create-catalog',
+      '/edit-catalog'
+    ],
+    '/products': [
+      '/products',
       '/view-product',
       '/create-product',
       '/edit-product'
     ],
-    '/product-release': [
-      '/product-release',
-      '/view-product-release',
-      '/create-product-release',
-      '/edit-product-release'
+    '/files': [
+      '/files',
+      '/create-file',
+      '/edit-file'
     ]
   };
 

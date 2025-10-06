@@ -1,6 +1,6 @@
 .sidebar {
   position: fixed;
-  top: 64px; // Below TFC header
+  top: 53px; // Below TFC header
   left: 0;
   height: calc(100vh - 64px); // Extend all the way to bottom (only account for header)
   width: 256px;
@@ -12,8 +12,7 @@
   flex-direction: column;
   overflow: hidden;
   box-shadow: 1px 0 8px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
-  font-family: "Helvetica Neue";
-
+  font-family: "kmd-HelveticaNeue";
   &.collapsed {
     width: 56px;
   }
@@ -49,7 +48,7 @@
   background: #FFFFFF; // White background by default
 
   &:hover {
-    background: #F7F7F7; // Very light gray on hover
+    background: #F8F9FA; // Very light gray on hover
 
     .nav-text {
       color: #1B1B1D;
@@ -64,17 +63,10 @@
       font-weight: 500; // Slightly bolder for active state
     }
 
-    .nav-icon .icon-svg {
-      filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%); // Black icon for active state
-    }    
-    
     .nav-icon .icon-home {
-      color: #000000; // Black color for active state
+     color: #000000; // Black color for active state
     }
-
-    .nav-icon .icon-software-services {
-      color: #333333; // Darker color for active state
-    }
+   
 
     .nav-icon .icon-product-lines,
     .nav-icon .icon-catalog,
@@ -82,8 +74,9 @@
     .nav-icon .icon-members,
     .nav-icon .icon-support,
     .nav-icon .icon-help-guide,
-    .nav-icon .icon-contact-us {
-      color: #333333; // Darker color for active state
+    .nav-icon .icon-contact-us
+ {
+      color: #000000; // Black color for active state
     }
   }
 }
@@ -98,22 +91,14 @@
   flex-shrink: 0;
 
   .icon-svg {
-    width: 20px;
-    height: 18px;
-    filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%); // Black color for icons
+    width: 24px;
+    height: 24px;
     transition: filter 0.2s ease;
+    color: #000000; // Black color for active state
   }
-  
   .icon-home {
     font-size: 24px;
-    color: #000000; // Black color for home icon
-    transition: color 0.2s ease;
-  }
-
-  .icon-software-services {
-    width: 20px !important;
-    height: 12px !important;
-    color: #666666; // Medium gray color to match other icons
+     color: #000000; // Black color for home icon
     transition: color 0.2s ease;
   }
 
@@ -123,9 +108,10 @@
   .icon-members,
   .icon-support,
   .icon-help-guide,
-  .icon-contact-us {
+  .icon-contact-us
+  {
     font-size: 24px;
-    color: #666666; // Medium gray color to match other icons
+    color:#000000; // Black color for contact us icon
     transition: color 0.2s ease;
   }
 }
@@ -147,56 +133,31 @@
 // Submenu specific styles - SUPPORT section styling
 .submenu-container {
   .submenu-header {
-    position: relative;
-    
-    .nav-text {
-      color: #000000; // Black text for submenu headers
-    }
-    
-    .nav-icon .icon-svg {
-      filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%); // Black color for header icons
-    }
-    
-    // Override active state for submenu headers - no red highlight
+    position: relative;    // Override active state for submenu headers - no red highlight
     &.active {
       background: #F5F5F5 !important; // Light gray background instead of red border
       border-left-color: transparent !important; // Remove red border
 
       .nav-text {
-        color: #000000; // Keep black text when active
+        color: #1B1B1D;
         font-weight: 500;
-      }
-
-      .nav-icon .icon-svg {
-        filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%); // Keep black icon when active
       }
     }
 
     &.expanded {
-      background: #F7F7F7; // Light gray background for expanded headers
-      border-top: #CCCCCC 1px solid; // Light gray border for expanded headers
-      
-      .nav-text {
-        color: #000000; // Keep black text when expanded
-      }
-      
-      .nav-icon .icon-svg {
-        filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%); // Keep black icon when expanded
-      }
-    }
-
-    .expand-icon {
+      background: #F5F5F5; // Light gray background for expanded SUPPORT header
+    }    .expand-icon {
       margin-left: auto;
       transition: transform 0.2s ease;
 
       kmd-icon {
-        color: #000000;
+        color: #666666;
       }
 
       .icon-open,
       .icon-close {
         font-size: 16px;
-        color: #000000;
+        color: #666666;
         transition: color 0.2s ease;
       }
     }
@@ -217,7 +178,7 @@
   .submenu-link {
     border-left: 4px solid transparent;
     min-height: 48px;
-    background: #FFFFFF; // White background for submenu items
+    background: #F8F9FA; // Match submenu background
 
     /* Apply Label/Medium font properties to submenu text */
     font-family: 'kmd-HelveticaNeue';
@@ -225,45 +186,31 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 22px;
-    color: #000000; // Black text color
-
-    .nav-icon {
+    color: #1B1B1D;    .nav-icon {
       width: 24px;
       height: 24px;
       margin-right: 16px;
 
-      .icon-svg {
-        width: 20px;
-        height: 20px;
-        filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%); // Black color for icons
-      }
-
       .icon-help-guide,
       .icon-contact-us {
         font-size: 24px;
-        color: #000000; // Black color for icons
+        color: #000000; // Black color for active state
         transition: color 0.2s ease;
       }
     }
 
     &:hover {
-      background: #F7F7F7; // Slightly darker on hover
+      background: #EEEEEE; // Slightly darker on hover
 
-      /* Maintain black color on hover */
-      color: #000000;
-    }
-
-    &.active {
+      /* Maintain Label/Medium color on hover */
+      color: #1B1B1D;
+    }    &.active {
       background: #FFFFFF; // White background for active submenu item
       border-left-color: #E53E3E; // Red border for active state
       font-weight: 500;
 
-      /* Maintain black color when active */
-      color: #000000;
-
-      .nav-icon .icon-svg {
-        filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%); // Black icon for active state
-      }
+      /* Maintain Label/Medium color when active */
+      color: #1B1B1D;
 
       .nav-icon .icon-help-guide,
       .nav-icon .icon-contact-us {
@@ -282,14 +229,9 @@
     background: #FFFFFF; // White background
 
     &:hover {
-      background: #F7F7F7; // Light gray on hover
+      background: #F8F9FA; // Light gray on hover
       color: #1B1B1D;
     }
-
-    .nav-icon .icon-svg {
-      filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%); // Black color for collapse icon
-    }
-  }
 }
 
 // Collapsed state adjustments
@@ -364,4 +306,5 @@
       transform: translateX(0);
     }
   }
+}
 }

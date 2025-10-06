@@ -83,3 +83,199 @@ a:hover {
 ::-webkit-scrollbar-thumb:hover {
   background: #a8a8a8;
 }
+
+@font-face {
+  font-family: 'thermo';
+  src: url('./assets/font/cc_fonts.eot?74437366');
+  src: url('./assets/font/cc_fonts.eot?74437366#iefix') format('embedded-opentype'),
+  url('./assets/font/cc_fonts.woff?74437366') format('woff'),
+  url('./assets/font/cc_fonts.ttf?74437366') format('truetype'),
+  url('./assets/font/cc_fonts.svg?74437366#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+ [class^='icon-'] {
+  font-family: "thermo";
+  font-style: normal;
+  font-weight: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: .2em;
+}
+
+.icon-edit:before{
+  content: '\E98E';
+  font-size: 16px;
+}
+
+.icon-edit-lx:before{
+  content: '\E98E';
+  font-size: 20px;
+}
+
+.icon-left:before{
+  content: '\E845';
+  font-size: 13px;
+}
+
+.icon-delete:before{
+  content: '\E801';
+  font-size: 14px;
+}
+
+.icon-drawer:before{
+  content: '\E832';
+  font-size: 16px;
+  color: #0071D0;
+}
+
+.icon-view-details:before{
+ content: '\E98A';
+  font-size: 16px;
+  color: #0071D0;
+}
+
+.icon-home:before{
+  content: '\E83B';
+  font-size: 24px;
+}
+
+.icon-product-lines:before{
+  content: '\E843';
+  font-size: 24px;
+}
+
+.icon-catalog:before{
+  content: '\E83C';
+  font-size: 24px;
+}
+
+.icon-files:before{
+  content: '\E83A';
+  font-size: 24px;
+}
+
+.icon-members:before{
+  content: '\E837';
+  font-size: 24px;
+}
+
+.icon-support:before{
+  content: '\E840';
+  font-size: 24px;
+}
+
+.icon-help-guide:before{
+  content: '\E835';
+  font-size: 16px;
+}
+
+.icon-mono:before{
+  content: '\E808';
+  font-size: 16px;
+}
+
+.icon-contact-us:before{
+  content: '\E836';
+  font-size: 24px;
+}
+
+.icon-small-help:before{
+  content: '\E83D';
+  font-size: 20px;
+}
+
+.icon-open:before{
+  content: '\E834';
+  font-size: 16px;
+}
+
+.icon-close:before{
+  content: '\E844';
+  font-size: 16px;
+}
+.icon-close-mono:before{
+  content: '\E915';
+  font-size: 16px;
+}
+
+.icon-plus:before{
+  content: '\E849';
+  font-size: 14px;
+}
+
+.products-table-data {
+  .archived, .available{
+    white-space: nowrap;
+    font-weight: 500;
+  }
+  .icon-available {
+    color: #005512;
+    span:before {
+      content: '\E847';
+      font-size: 12px;
+      font-family: thermo !important;
+      color: #005512;
+    }
+  }
+
+  .icon-archived {
+    color: #2B2B30;
+    span:before {
+      content: '\E846';
+      font-size: 14px;
+      font-family: thermo !important;
+      color: #2B2B30;
+    }
+  }
+}
+/* Sidebar specific styling for fontello icons */
+.sidebar .icon-home,
+.sidebar .icon-product-lines,
+.sidebar .icon-catalog,
+.sidebar .icon-files,
+.sidebar .icon-members,
+.sidebar .icon-support,
+.sidebar .icon-help-guide,
+.sidebar .icon-contact-us {
+  font-size: 24px !important;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Sidebar expand/collapse icons */
+.sidebar .expand-icon .icon-open,
+.sidebar .expand-icon .icon-close {
+  font-size: 16px !important;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666666;
+}
+
+.icon-open:before{
+  content: '\E834';
+  font-size: 16px;
+}
+
+.icon-close:before{
+  content: '\E844';
+  font-size: 16px;
+}
+.icon-close-mono:before{
+  content: '\E915';
+  font-size: 16px;
+}

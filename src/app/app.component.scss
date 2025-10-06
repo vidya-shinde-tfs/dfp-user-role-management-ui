@@ -2,7 +2,7 @@
 .app-layout {
   display: flex;
   min-height: calc(100vh - 107px); // Account for header height (50px + 57px)
-  margin-top: 107px; // Account for fixed header (2-tier header)
+  margin-top: 52px; // Account for fixed header (2-tier header)
 }
 
 .main-content {
@@ -13,7 +13,7 @@
   flex-direction: column;
   
   &.sidebar-collapsed {
-    margin-left: 60px; // Account for collapsed sidebar width
+    margin-left: 55px; // Account for collapsed sidebar width
   }
   
   .content-wrapper {
